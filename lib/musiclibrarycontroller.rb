@@ -102,5 +102,13 @@ require 'pry'
     end
   end
 
+  def song_array
+    sorted_library = self.library.sort_by {|song|song.name}
+    sorted_library.collect do |song|
+      "#{sorted_library.index(song) + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    end
+  end
+
+
 
 end
