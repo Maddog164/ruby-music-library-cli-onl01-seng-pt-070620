@@ -52,6 +52,13 @@ require 'pry'
     sorted_library.uniq
   end
 
+  def list_artists
+    sorted_library = self.library(Artist).sort_by {|object|object.name}
+    artists = sorted_library.collect {|object|"#{object.name}"}.uniq
+    artists.each {|artist| puts "#{artists.index(artist) + 1}. #{artist}"}
+  end
+
+
 
 
 end
